@@ -1,0 +1,41 @@
+@import "./../../../abstracts/vars";
+@import "./../../../abstracts/mixins";
+
+.page {
+  @include flex-edit(center, center);
+
+  .wrap {
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    margin: 3.8rem 0 2.6rem;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+    width: 25rem;
+    height: 29rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    background-color: $whiteColor;
+
+    .latterImg {
+      margin-top: 2rem;
+
+      width: 108px;
+    }
+
+    .title {
+      margin: 2rem 0 4rem;
+
+      @include text-edit(Poppins, 600, 1.4rem, 0.7);
+    }
+
+    .text {
+      max-width: 21rem;
+      @include text-edit(SF UI Display, 500, 1rem, 1.5);
+
+      color: $lightGrey;
+    }
+  }
+}

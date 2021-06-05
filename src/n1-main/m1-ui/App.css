@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+
+  height:100vh;
+}
+
+a{
+  font-size: 1rem;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+h1, h2,h3,h4,h5,h6,p, div{
+  margin: 0;
+  padding: 0;
+}
+

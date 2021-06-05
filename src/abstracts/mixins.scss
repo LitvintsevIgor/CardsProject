@@ -1,0 +1,15 @@
+@mixin text-edit ($fontFamily, $fontWeight, $fontSize, $lineHeight) {
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+
+@mixin flex-edit ($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+
+
+}

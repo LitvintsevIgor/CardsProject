@@ -1,0 +1,96 @@
+@import "../../../abstracts/mixins";
+@import "../../../abstracts/vars";
+
+.loginPage {
+  @include flex-edit(center, center);
+
+
+
+  .wrap {
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    margin: 3.8rem 0 2.6rem;
+
+    width: 25rem;
+    height: 34rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    background-color: $whiteColor;
+  }
+
+  .title {
+    margin: 2rem 0 2.5rem;
+
+    @include text-edit(Poppins, 600, 1.4rem, 0.7);
+  }
+
+  .emailText {
+    margin-top: 2.5rem;
+
+    @include text-edit(SF UI Display, 500, 1rem, 1.5);
+
+    color: #24254A;
+
+    text-align: left;
+  }
+  .passwordText{
+    @include text-edit(SF UI Display, 500, 1rem, 1.5);
+
+    color: #24254A;
+
+    text-align: left;
+  }
+  .input::placeholder{
+    @include text-edit(SF UI Display, 500, 1.1rem, 1.5);
+
+    color: #24254A;
+
+    opacity: 0.5;
+  }
+  .passwordBox{
+    margin-top: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    .btnShow{
+      width:24px;
+      height:24px;
+
+      position: absolute;
+      top: 15px;
+      right: 13px;
+
+      cursor:pointer;
+      &:hover{
+        font-weight: 400;
+        text-shadow: none;
+        box-shadow: none;
+
+      }
+
+      border:none;
+      background-color: transparent;
+
+    }
+  }
+  .remember {
+    height: 3rem;
+    margin-bottom: 5rem;
+
+    @include flex-edit(flex-end, center);
+
+    .rememberText {
+      line-height: 20px;
+
+    }
+  }
+  .checkbox{
+    margin-right: 0.7rem;
+
+  }
+}

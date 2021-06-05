@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import '../../../abstracts/vars.scss';
+@import '../../../abstracts/mixins.scss';
+
+
+header {
+
+  background-color: #ffe6fb;
+
+
+  .container {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 0 0.9rem;
+  }
+
+  .wrap {
+    height: 3.75rem;
+
+    @include flex-edit(space-between, center);
+  }
+
+  .navMenu {
+    gap: 0.9rem;
+
+    display: flex;
+
+    & a {
+
+      font-size: 1rem;
+      font-family: SF-UI-Display;
+      font-weight: 500;
+
+      text-decoration: none;
+
+      color: $textColor;
+    }
+  }
+
+
+
+}

@@ -1,0 +1,35 @@
+@import './../../../../abstracts/vars.scss';
+@import './../../../../abstracts/mixins.scss';
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    font-weight: bold;
+    text-shadow: #4d85ca;
+    -webkit-box-shadow: 0 0 4px 1px #686868;
+    box-shadow: 0 0 4px 1px #686868;
+}
+
+.default {
+
+}
+
+.red {
+    background: #f9a9a9;
+}
+
+.buttonSuper {
+    margin: 3px;
+    padding: 5px;
+
+    border: 1px solid;
+    border-radius: 30px;
+
+    background-color: $accentColor;
+    color:$whiteColor;
+
+    @include text-edit (SF UI Display, 500, 1rem, 1.18);
+
+
+}

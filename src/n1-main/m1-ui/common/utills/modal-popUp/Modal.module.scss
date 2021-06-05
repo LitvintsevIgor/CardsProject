@@ -1,0 +1,39 @@
+.modalBox{
+  height: 100px;
+  width: 400px;
+  position: fixed;
+  align-self: center;
+  justify-self: center;
+  z-index: 1;
+  margin-top: 50px;
+  animation: popUp 1s;
+  .content{
+    padding: 30px 30px;
+    border-radius: 7px;
+    background-color: #f9f9f9;
+    border: 1px solid gray;
+    transition: 2s;
+    overflow-y: scroll;
+    position: relative;
+    text-align: center;
+    button{
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      padding: 1px;
+      color: gray;
+    }
+  }
+}
+
+@keyframes popUp {
+  from{
+    opacity: 0;
+    transform: scale(0,0);
+
+  }
+  to {
+    opacity: 1;
+    transform: scale(1,1);
+  }
+}

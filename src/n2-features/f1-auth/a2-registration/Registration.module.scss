@@ -1,0 +1,100 @@
+@import "./../../../abstracts/vars";
+@import "./../../../abstracts/mixins";
+
+
+
+.registrationPage{
+  @include flex-edit(center, center);
+
+  .wrap {
+    padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    margin: 3.8rem 0 2.6rem;
+
+    width: 25rem;
+    height: 34rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    background-color: $whiteColor;
+  }
+  .title {
+    margin: 2rem 0 1.5rem;
+
+    @include text-edit(Poppins, 600, 1.4rem, 0.7);
+  }
+  .emailText,
+  .passwordText,
+  .confirmText {
+    @include text-edit(SF UI Display, 500, 1.0rem, 1.5);
+
+    color: #24254A;
+
+    text-align: left;
+  }
+  .emailText{
+    margin-top: 2.5rem;
+  }
+
+.input::placeholder{
+  @include text-edit(SF UI Display, 500, 0.8rem, 1.5);
+
+  color: #24254A;
+
+  opacity: 0.5;
+}
+  .passwordBox{
+    margin-top: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    .btnShow{
+      width:24px;
+      height:24px;
+
+      position: absolute;
+      top: 15px;
+      right: 13px;
+
+      cursor:pointer;
+
+      &:hover{
+        font-weight: 400;
+        text-shadow: none;
+        box-shadow: none;
+      }
+      border:none;
+      background-color: transparent;
+
+    }
+  }
+
+  .btnBox{
+    margin-top: 5rem;
+
+    display:flex;
+    justify-content: space-between;
+
+    .btnCancel{
+      width: 124px;
+
+      background-color: $secondaryColor;
+
+      @include text-edit(SF UI Display, 500, 1rem, 1.2);
+
+      color:$accentColor;
+
+      border:none;
+    }
+    .btnRegistr{
+      width: 187px;
+      height: 36px;
+
+      @include text-edit(SF UI Display, 500, 1rem, 1.2);
+    }
+  }
+}
