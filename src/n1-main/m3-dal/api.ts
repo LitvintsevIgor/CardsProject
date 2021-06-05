@@ -57,6 +57,9 @@ export const API = {
                         type: "pack"
                     }
             })
+    },
+    async deletePack(packId: string) {
+        return await instance.delete(`/cards/pack?id=${packId}`)
     }
 }
 

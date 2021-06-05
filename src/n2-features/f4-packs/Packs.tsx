@@ -1,25 +1,31 @@
-import React, { useEffect } from 'react';
+import React, {MouseEventHandler, useEffect} from 'react';
 import {SuperInputText} from "../../n1-main/m1-ui/common/SuperInput/SuperInputText";
 import {SuperButton} from "../../n1-main/m1-ui/common/SuperButton/SuperButton";
 import {useDispatch, useSelector} from "react-redux";
-import {addPackThunk, CardPacksType, setPacksThunk} from "../../n1-main/m2-bll/packsReducer";
+import {addPackThunk, CardPacksType, deletePackThunk, setPacksThunk} from "../../n1-main/m2-bll/packsReducer";
 import {RootReducerType} from "../../n1-main/m2-bll/store";
 import style from './Packs.module.css'
 
 export const Packs = () => {
-    const dispatch = useDispatch()
 
+    // HOOKS
+    const dispatch = useDispatch()
     useEffect(() => {
         dispatch(setPacksThunk())
     }, [])
+    const packs = useSelector<RootReducerType, CardPacksType> (state => state.packs.packs)
 
-    let packs = useSelector<RootReducerType, CardPacksType> (state => state.packs.packs)
 
-    let handleAddPack = () => {
+    // HANDLERS
+    const handleAddPack = () => {
         dispatch(addPackThunk())
     }
+    const handleDeletePack = (packId: string) => {
+        debugger
+        dispatch(deletePackThunk(packId))
+    }
 
-    debugger
+
     return (
         <div>
             <h1>Packs list</h1>
@@ -43,6 +49,9 @@ export const Packs = () => {
                                 </div>
                                 <div>
                                     {pack.user_name}
+                                </div>
+                                <div>
+                                    <button onClick={ () => handleDeletePack(pack._id)}>Delete</button>
                                 </div>
                             </div>
                         )

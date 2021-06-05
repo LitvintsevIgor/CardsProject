@@ -10,6 +10,8 @@ let initialState = {
 
 export const packsReducer = (state: initialStateType = initialState, action: ActionType): initialStateType => {
     switch (action.type) {
+        case "PACKS/DELETE-PACK":
+            return {...state, packs: state.packs.filter( (p) => p._id !== action.packId )}
         case 'PACKS/SET-PACKS': {
             return {...state, packs: action.packs}
         }
@@ -23,10 +25,11 @@ export const packsReducer = (state: initialStateType = initialState, action: Act
 // ACTIONS
 const setPacks = (packs: CardPacksType) => ({type: 'PACKS/SET-PACKS', packs} as const)
 const addPack = (pack: OneCardPackType) => ({type: 'PACKS/ADD-PACK', pack} as const)
+const deletePack = (packId: string) => ({type: 'PACKS/DELETE-PACK', packId} as const)
 
 // TYPES
 type initialStateType = typeof initialState
-type ActionType = ReturnType<typeof setPacks> | ReturnType<typeof addPack>
+type ActionType = ReturnType<typeof setPacks> | ReturnType<typeof addPack> | ReturnType<typeof deletePack>
 export type OneCardPackType = {
     cardsCount: number
     created: string
@@ -52,7 +55,6 @@ type ThunkType = ThunkAction<void, RootReducerType, {}, ActionType>
 export const setPacksThunk = () => async (dispatch: Dispatch) => {
     await API.setPacks()
         .then( (res) => {
-            debugger
             dispatch(setPacks(res.data.cardPacks))
         })
 }
@@ -60,8 +62,15 @@ export const setPacksThunk = () => async (dispatch: Dispatch) => {
 export const addPackThunk = (): ThunkType => async (dispatch) => {
     await API.addPack()
         .then( (res) => {
-            debugger
             dispatch(addPack(res.data))
+            dispatch(setPacksThunk())
+        } )
+}
+
+export const deletePackThunk = (packId: string): ThunkType => async (dispatch) => {
+    await API.deletePack(packId)
+        .then( (res) => {
+            dispatch(deletePack(packId))
             dispatch(setPacksThunk())
         } )
 }
