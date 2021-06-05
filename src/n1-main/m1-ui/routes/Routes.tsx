@@ -7,7 +7,7 @@ import {Profile} from "../../../n2-features/f2-profile/Profile";
 import {Page404} from "../../../n2-features/f3-error/Page404";
 import { NewPasswordForm } from "../../../n2-features/f1-auth/a3-passwordRecovery/NewPaswordForm";
 import {Packs} from "../../../n2-features/f4-packs/Packs";
-import {Cards} from "../../../n2-features/cards/Cards";
+import {Cards} from "../../../n2-features/f5-cards/Cards";
 
 export const PATH = {
     LOGIN: '/login',
@@ -16,7 +16,7 @@ export const PATH = {
     PROFILE: '/profile',
     ERROR: '/404',
     PACKS: '/f4-packs',
-    CARDS: '/cards',
+    CARDS: '/f5-cards',
     NEW_PASSWORD: '/set-new-password'
 }
 

@@ -42,12 +42,12 @@ export const API = {
     async setPacks() {
         return await instance.get<PacksType>('/cards/pack')
     },
-    async addPack() {
+    async addPack(packName: string) {
         return await instance.post('/cards/pack',
             {
                 cardsPack:
                     {
-                        name: "no Name",
+                        name: packName,
                         path: "/def",
                         grade: 0,
                         shots: 0,

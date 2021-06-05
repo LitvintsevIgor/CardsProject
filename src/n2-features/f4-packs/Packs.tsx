@@ -1,4 +1,4 @@
-import React, {MouseEventHandler, useEffect} from 'react';
+import React, {ChangeEvent, MouseEventHandler, useEffect, useState} from 'react';
 import {SuperInputText} from "../../n1-main/m1-ui/common/SuperInput/SuperInputText";
 import {SuperButton} from "../../n1-main/m1-ui/common/SuperButton/SuperButton";
 import {useDispatch, useSelector} from "react-redux";
@@ -14,15 +14,18 @@ export const Packs = () => {
         dispatch(setPacksThunk())
     }, [])
     const packs = useSelector<RootReducerType, CardPacksType> (state => state.packs.packs)
+    const [packName, setPackName] = useState('')
 
 
     // HANDLERS
     const handleAddPack = () => {
-        dispatch(addPackThunk())
+        dispatch(addPackThunk(packName))
     }
     const handleDeletePack = (packId: string) => {
-        debugger
         dispatch(deletePackThunk(packId))
+    }
+    const handleChangeText = (e: ChangeEvent<HTMLInputElement>) => {
+        setPackName(e.currentTarget.value)
     }
 
 
@@ -30,7 +33,7 @@ export const Packs = () => {
         <div>
             <h1>Packs list</h1>
             <div>
-                <SuperInputText/>
+                <SuperInputText onChange={handleChangeText} />
                 <SuperButton onClick={handleAddPack} >Add new pack</SuperButton>
             </div>
             <div>

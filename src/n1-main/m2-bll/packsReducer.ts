@@ -59,8 +59,8 @@ export const setPacksThunk = () => async (dispatch: Dispatch) => {
         })
 }
 
-export const addPackThunk = (): ThunkType => async (dispatch) => {
-    await API.addPack()
+export const addPackThunk = (packName: string): ThunkType => async (dispatch) => {
+    await API.addPack(packName)
         .then( (res) => {
             dispatch(addPack(res.data))
             dispatch(setPacksThunk())
