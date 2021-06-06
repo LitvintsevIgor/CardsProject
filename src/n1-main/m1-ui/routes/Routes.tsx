@@ -29,7 +29,7 @@ export const Routes = () => {
                 <Route path={PATH.RECOVERY} render={() => <PasswordRecovery/>}/>
                 <Route path={PATH.PROFILE} render={() => <Profile/>}/>
                 <Route path={PATH.PACKS} render={() => <Packs/>}/>
-                <Route path={PATH.CARDS} render={() => <Cards/>}/>
+                <Route path={PATH.CARDS} render={() => <Cards />}/>
                 <Route path={PATH.NEW_PASSWORD + `/:resetPasswordToken`}>
                     <NewPasswordForm/>
                 </Route>

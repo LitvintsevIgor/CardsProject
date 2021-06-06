@@ -40,7 +40,7 @@ export const API = {
         return await instance.put('auth/me', {name: name, avatar: avatar})
     },
     async setPacks() {
-        return await instance.get<PacksType>('/cards/pack')
+        return await instance.get<PacksType>('/cards/pack?pageCount=150')
     },
     async addPack(packName: string) {
         return await instance.post('/cards/pack',
@@ -60,6 +60,9 @@ export const API = {
     },
     async deletePack(packId: string) {
         return await instance.delete(`/cards/pack?id=${packId}`)
+    },
+    async setCards(packId: string){
+        return await instance.get<CardsType>(`/cards/card?cardsPack_id=${packId}`)
     }
 }
 
@@ -89,4 +92,33 @@ export type PacksType = {
     pageCount: number
     token: string
     tokenDeathTime: number
+}
+
+export type CardsType = {
+    cards: OneCardType[]
+    cardsTotalCount: number
+    maxGrade: number
+    minGrade: number
+    packUserId: string
+    page: number
+    pageCount: number
+    token: string
+    tokenDeathTime: number
+}
+
+export type OneCardType = {
+    answer: string
+    question: string
+    cardsPack_id: string
+    grade: number
+    rating: number
+    shots: number
+    type: string
+    user_id: string
+    created: string
+    updated: string
+    __v: number
+    _id: string
+
+
 }
