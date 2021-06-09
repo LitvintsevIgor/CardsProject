@@ -10,10 +10,10 @@ export const CheckEmail = (props: CheckEmailType) => {
     return (
         <div className={s.page}>
             <div className={s.wrap}>
-            <Logo/>
+                <Logo/>
                 <img className={s.latterImg} src={latter} alt="latter-icon"/>
-            <h2 className={s.title}>Check Email</h2>
-            <div className={s.text}>{`We have sent an Email with with instructions to ${props.email}`}</div>
+                <h2 className={s.title}>Check Email</h2>
+                <div className={s.text}>{`We have sent an Email with with instructions to ${props.email}`}</div>
             </div>
         </div>
     )

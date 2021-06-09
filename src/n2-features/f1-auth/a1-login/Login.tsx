@@ -27,7 +27,7 @@ export const Login = () => {
 
     //HANDLERS
     const onLoginButtonHandler = async () => {
-            dispatch(loginThunk(email, password, remember))
+        dispatch(loginThunk(email, password, remember))
 
     }
     const onRecoveryButtonHandler = () => {
@@ -50,7 +50,7 @@ export const Login = () => {
                     loading && <div>LOADING......</div>
                 }
                 {
-                    error.length > 0 &&  <PopUp setServerErrorCallback={onClosePopUpHandler} text={error}/>
+                    error.length > 0 && <PopUp setServerErrorCallback={onClosePopUpHandler} text={error}/>
                 }
                 <Logo/>
                 <h1 className={s.title}>Sign in</h1>

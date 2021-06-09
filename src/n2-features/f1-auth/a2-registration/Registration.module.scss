@@ -2,8 +2,7 @@
 @import "./../../../abstracts/mixins";
 
 
-
-.registrationPage{
+.registrationPage {
   @include flex-edit(center, center);
 
   .wrap {
@@ -19,11 +18,13 @@
 
     background-color: $whiteColor;
   }
+
   .title {
     margin: 2rem 0 1.5rem;
 
     @include text-edit(Poppins, 600, 1.4rem, 0.7);
   }
+
   .emailText,
   .passwordText,
   .confirmText {
@@ -33,18 +34,20 @@
 
     text-align: left;
   }
-  .emailText{
+
+  .emailText {
     margin-top: 2.5rem;
   }
 
-.input::placeholder{
-  @include text-edit(SF UI Display, 500, 0.8rem, 1.5);
+  .input::placeholder {
+    @include text-edit(SF UI Display, 500, 0.8rem, 1.5);
 
-  color: #24254A;
+    color: #24254A;
 
-  opacity: 0.5;
-}
-  .passwordBox{
+    opacity: 0.5;
+  }
+
+  .passwordBox {
     margin-top: 1.5rem;
 
     display: flex;
@@ -52,45 +55,47 @@
 
     position: relative;
 
-    .btnShow{
-      width:24px;
-      height:24px;
+    .btnShow {
+      width: 24px;
+      height: 24px;
 
       position: absolute;
       top: 15px;
       right: 13px;
 
-      cursor:pointer;
+      cursor: pointer;
 
-      &:hover{
+      &:hover {
         font-weight: 400;
         text-shadow: none;
         box-shadow: none;
       }
-      border:none;
+
+      border: none;
       background-color: transparent;
 
     }
   }
 
-  .btnBox{
+  .btnBox {
     margin-top: 5rem;
 
-    display:flex;
+    display: flex;
     justify-content: space-between;
 
-    .btnCancel{
+    .btnCancel {
       width: 124px;
 
       background-color: $secondaryColor;
 
       @include text-edit(SF UI Display, 500, 1rem, 1.2);
 
-      color:$accentColor;
+      color: $accentColor;
 
-      border:none;
+      border: none;
     }
-    .btnRegistr{
+
+    .btnRegistr {
       width: 187px;
       height: 36px;
 
